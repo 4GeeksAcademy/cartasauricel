@@ -11,15 +11,14 @@ window.onload = function() {
     .getElementById("generateButtom")
     .addEventListener("click", generateCard);
 
-    // clic al boton aplicar dimensiones
-    document
-    .getElementById("aplicarDimensiones")
-    .addEventListener("click", aplicarDimensiones);
+  // clic al boton aplicar dimensiones
+  document
+    .getElementById("generarDimensiones")
+    .addEventListener("click", generarDimensiones);
 
   //funcion para generar la carta
-
   function generateCard() {
-    const palos = ["spade", "club", "heart", "diamond"];
+    const palos = ["pica", "trebol", "corazon", "diamante"];
     const valores = [
       "A",
       "2",
@@ -36,10 +35,10 @@ window.onload = function() {
       "K"
     ];
     const simbolosPalos = {
-      spade: "♠",
-      club: "♣",
-      heart: "♥",
-      diamond: "♦"
+      pica: "♠",
+      trebol: "♣",
+      corazon: "♥",
+      diamante: "♦"
     };
 
     const paloAleatorio = palos[Math.floor(Math.random() * palos.length)];
@@ -50,28 +49,27 @@ window.onload = function() {
     carta.innerHTML = `
         <span class="top-left simbol">${simbolosPalos[paloAleatorio]}</span>
         <span class="center number">${valosAleatorio} </span>
-        <span class="botton-rigth simbol">${simbolosPalos[paloAleatorio]} </span>
+        <span class="bottom-right simbol">${simbolosPalos[paloAleatorio]} </span>
         `;
   }
 
-  // Funcion para aplicar dimensiones especificas por el usuario
-  function aplicarDimensiones(){
+  // El Usuario Aplicara las dimensiones
+  function generarDimensiones() {
     const width = document.getElementById("width").value;
     const height = document.getElementById("height").value;
-    const carta = document.getElementById("carta");
+    const carta = document.getElementById("card");
 
     if (width && height) {
       carta.style.width = width + "px";
-      carta.style.height = height + "px";}
-      else {
-        aleert("Por favor, ingresa valores validos para el ancho y altura.");
-      }
+      carta.style.height = height + "px";
+    } else {
+      alert("Por favor, ingresa valores válidos para el ancho y altura.");
     }
-    
   }
+
   // carta inicial cuando cargue la pagina
   generateCard();
 
-  //temporizador para generar nueva carta cada 10seg
+  // temporizador para generar nueva carta cada 10 seg
   setInterval(generateCard, 10000);
 };
