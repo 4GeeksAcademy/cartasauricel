@@ -58,11 +58,39 @@ body {
   right: 15px;
   font-size: 80px;
   transform: rotate(180deg);
+  font-style: normal;
   font-size: 170px;
   color: black;
 }
 
 #generateButtom {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+.dimensiones-inputs {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dimensiones-inputs label {
+  margin-top: 10px;
+}
+
+.dimensiones-inputs input {
+  margin-top: 5px;
+  padding: 5px;
+  font-size: 16px;
+  text-align: center;
+}
+
+#aplicarDimensiones {
   margin-top: 20px;
   padding: 10px 20px;
   font-size: 16px;

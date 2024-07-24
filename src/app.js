@@ -11,6 +11,11 @@ window.onload = function() {
     .getElementById("generateButtom")
     .addEventListener("click", generateCard);
 
+    // clic al boton aplicar dimensiones
+    document
+    .getElementById("aplicarDimensiones")
+    .addEventListener("click", aplicarDimensiones);
+
   //funcion para generar la carta
 
   function generateCard() {
@@ -49,6 +54,21 @@ window.onload = function() {
         `;
   }
 
+  // Funcion para aplicar dimensiones especificas por el usuario
+  function aplicarDimensiones(){
+    const width = document.getElementById("width").value;
+    const height = document.getElementById("height").value;
+    const carta = document.getElementById("carta");
+
+    if (width && height) {
+      carta.style.width = width + "px";
+      carta.style.height = height + "px";}
+      else {
+        aleert("Por favor, ingresa valores validos para el ancho y altura.");
+      }
+    }
+    
+  }
   // carta inicial cuando cargue la pagina
   generateCard();
 
